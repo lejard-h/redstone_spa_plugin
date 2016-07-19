@@ -1,0 +1,14 @@
+name: redstone_spa_plugin
+description: Serve single page application (SPA) with Redstone
+version: 0.0.1
+author: Hadrien Lejard <hadrien.lejard@gmail.com>
+homepage: https://github.com/lejard-h/redstone_spa_plugin
+
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+
+dependencies:
+  redstone:
+    git:
+      url: git@github.com:redstone-dart/redstone.git
+      ref: be2d24ab2c5c8087f020be117f84d966081aed6a
