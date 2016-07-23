@@ -10,9 +10,10 @@ import "package:di/di.dart";
 import "package:redstone/redstone.dart";
 
 RedstonePlugin RedstoneSpaPlugin(String directory, [List<String> ignorePath]) => (Manager manager) {
+      showErrorPage = false;
       File _index = new File(Path.normalize("${Path.dirname(Path.fromUri(Platform.script))}/$directory/index.html"));
       manager.addErrorHandler(const ErrorHandler(404), "Redirect To Index", (Injector injector, Request request) {
-        if (ignorePath != null && ignorePath.every((String path) => request.requestedUri.path.startsWith(path))) {
+        if (ignorePath != null && ignorePath.any((String path) => (new RegExp(path)).hasMatch(request.requestedUri.path))) {
           return chain.next();
         }
         File req = new File("${Path.dirname(Path.fromUri(Platform.script))}/$directory/${request.requestedUri.path}");

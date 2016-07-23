@@ -1,20 +1,25 @@
 # redstone_spa_plugin
 
-A library for Dart developers. It is awesome.
+Automatically handle 404 error and redirect to the specified index.
 
 ## Usage
 
 A simple usage example:
 
-    import 'package:redstone_spa_plugin/redstone_spa_plugin.dart';
+```dart
+import 'package:redstone/redstone.dart' as Redstone;
+import 'package:redstone_spa_plugin/redstone_spa_plugin.dart';
 
-    main() {
-      var awesome = new Awesome();
-    }
+Redstone.addPlugin(RedstoneSpaPlugin("../build/web, [
+    r"\/api(.*)"
+]));
+```
+      
+### [More example](https://github.com/lejard-h/redstone_spa_plugin/tree/master/example)
 
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/lejard-h/redstone_spa_plugin/issues/new
 # redstone_spa_plugin
